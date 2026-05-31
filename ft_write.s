@@ -14,8 +14,11 @@ ft_write:
     neg rax
     mov rdi, rax
     
-    call __errno_location wrt ..plt
-
+    call __errno_location wrt ..plt 
+;The wrt ..plt notation stands for With Respect to Procedure Linkage Table. 
+;It is a mandatory syntax rule in 64-bit Linux when your assembly code 
+;calls an external function that lives inside a shared dynamic library (like libc). 
+;It acts as a routing slip so the linker knows how to find the function.
                             
     mov [rax], rdi
     mov rax, -1
