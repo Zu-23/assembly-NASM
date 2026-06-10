@@ -2,7 +2,8 @@ NAME        = libasm.a
 TEST_NAME   = test_libasm
 
 CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror -fPIE
+
 NASM        = nasm -f elf64
 AR          = ar rcs
 

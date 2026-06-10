@@ -9,11 +9,19 @@ ft_strcmp:
     mov al, byte [rdi + rcx]
     mov dl, byte [rsi + rcx]
     sub al, dl
-    jne .ret
+    jl .retl
+    jg .retg
     cmp dl, 0
-    je .ret
+    je .rete
     inc rcx
     jmp .cmp
 
-.ret:
+.retl:
+    mov rax, -1
+    ret
+.retg:
+    mov al, 1
+    ret
+.rete:
+    mov al, 0
     ret
