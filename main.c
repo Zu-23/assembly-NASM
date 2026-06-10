@@ -26,7 +26,7 @@ int main()
 
     // // 2. ft_strcpy
     char dest1[50] = {0}, dest2[50] = {0};
-    assert(ft_strcpy(dest1, "42 Network") == dest1); // Must return dest pointer
+    assert(ft_strcpy(dest1, "42 Network") == dest1);
     strcpy(dest2, "42 Network");
     assert(strcmp(dest1, dest2) == 0);
 
@@ -39,7 +39,7 @@ int main()
     assert(strcmp(dup, "Dynamic Memory") == 0);
     free(dup);
     // 5. ft_write
-    char *test = "hello world";
+    char *test = "hello world\n";
     int size = ft_strlen(test);
     ft_write(1, test, size);
 
@@ -49,9 +49,8 @@ int main()
     char buf[50] = {0};
     assert(fd >= 0);
     ret = ft_read(fd, buf, 8);
-    // buf[8] = '\0';
-    assert(ret == 8); // Assert it read exactly 8 bytes
-    assert(strncmp(buf, "Hello 42", 8) == 0); // Assert the text matches perfectly
+    assert(ret == 8); 
+    assert(strncmp(buf, "Hello 42", 8) == 0); 
     close(fd);
 
     printf("OK\n");
